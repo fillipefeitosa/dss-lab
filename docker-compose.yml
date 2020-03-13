@@ -1,0 +1,23 @@
+version: "3"
+services:
+    phusion:
+        container_name: phusion-passenger
+        restart: "no"
+        volumes:
+            - ./phusion-config:/etc/nginx/custom
+        build: .
+        ports:
+            - "80:80"
+            - "8080:8080"
+            - "443:443"
+        links:
+            - mongo
+            # - lamp
+    mongo:
+        container_name: dsslab-mongo
+        image: mongo
+        restart: "no"
+        volumes:
+            - ./mongoDB/:/data/db
+        ports:
+            - "27017:27017"
