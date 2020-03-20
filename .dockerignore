@@ -1,0 +1,6 @@
+# .dockerignore
+
+mongoDB/
+mysqlDB/
+
+# Other files and folder
