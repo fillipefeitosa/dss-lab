@@ -27,7 +27,7 @@ docker run -p "80:80" -v ${PWD}/phpapp:/app mattrayner/lamp:latest-1804
 
 1. docker exec -it container_name /bin/bash
 2. mysql -u root
-3. GRANT ALL PRIVILEGES ON *.* TO 'dcspt-dlab-web'@'localhost' IDENTIFIED BY 'password';
+3. GRANT ALL PRIVILEGES ON *.* TO 'dcspt-dlab-web'@'localhost' IDENTIFIED BY 'GuRTHDFPDHl8teRv';
 4. exit # para sair do terminal mysql
 5. mysql -u dcspt-dlab-web -p *e forneça a senha*
 6. CREATE DATABASE dcspt_dlab;
