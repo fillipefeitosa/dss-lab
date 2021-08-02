@@ -10,7 +10,6 @@ services:
             - "443:443"
         links:
             - mongo
-            - lamp
     mongo:
         container_name: dsslab-mongo
         image: mongo
@@ -19,12 +18,3 @@ services:
             - ./mongoDB/:/data/db
         ports:
             - "27017:27017"
-    lamp:
-        container_name: lamp
-        image: "mattrayner/lamp:latest-1804"
-        restart: "no"
-        volumes:
-            - ./phpapp/:/app
-            - ./mysqlDB/:/var/lib/mysql
-        ports:
-        - "8000:80"

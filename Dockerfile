@@ -10,6 +10,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -qq -y software-properties-co
 # Remove Default configuration and Copy DSS-lab Nginx service
 RUN rm -f /etc/nginx/sites-enabled/default  
 COPY ./phusion-config/dsslab.conf /etc/nginx/sites-enabled
+COPY ./phusion-config/govcopp-dsslab_ua_pt.crt /home/app/meteorapp/govcopp-dsslab_ua_pt.crt
+COPY ./phusion-config/govcopp-dsslab_ua_pt.rsa /home/app/meteorapp/govcopp-dsslab_ua_pt.rsa
 # Copy meteorapp bundle to container with APP user permissions and ownership
 COPY --chown=app:app ./meteorapp/ /home/app/meteorapp
 
